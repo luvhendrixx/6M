@@ -2,7 +2,7 @@
 
 -> A notification system (notif.py)
 
--> A API with POST AND GET AND CRUD capabilities + OS level user identificaiton and display {UID} etc... (main.py)
+-> An API with POST AND GET AND CRUD capabilities + OS level user identificaiton and display {UID} etc... (main.py)
 
 -> A Russian Roulette game (roulette.py)
 
