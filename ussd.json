@@ -1,0 +1,134 @@
+[
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 58066
+    },
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 57013
+    },
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 13474
+    },
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 13981
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 99657
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 29978
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 91616
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 10199
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 31278
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 48580
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 82287
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 39464
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 81234
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 13816
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 86025
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 96095
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 87960
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 90092
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 20959
+    },
+    {
+        "title": "USSD",
+        "used": false,
+        "digit_length": 5,
+        "generated_code": 68058
+    },
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 71741
+    },
+    {
+        "title": "USSD",
+        "used": true,
+        "digit_length": 5,
+        "generated_code": 85415
+    }
+]
