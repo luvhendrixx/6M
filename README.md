@@ -9,3 +9,5 @@
 -> A USSD generator with POST AND GET endpoints logic + Docker containment/packaging etc... (ussd.py)
 
 -> A basic arithmetic calculator (calc.py)
+
+-> A mini search engine inclusive of caching, crawling, indexing, ranking that queries local files, usually markdown files and utilizes them (ily.py)
