@@ -4,6 +4,13 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# load the GEMINI API from dotenv
+api_key=os.getenv("GEMINI_API_KEY")
 
 # --- ANSI Colors ---
 RESET = "\033[0m"
@@ -13,6 +20,7 @@ GREEN = "\033[32m"
 YELLOW = "\033[33m"
 CYAN = "\033[36m"
 DIM = "\033[2m"
+MAGENTA = "\033[95m" # new magenta colour
 
 
 class KBCache:
@@ -91,6 +99,40 @@ def draw_ascii_box(title, text_content, border_color=CYAN):
     return "\n".join(box)
 
 
+# A fallback to consulting GEMINI if the local query doesn't work
+def consult_gemini_fallback(error_tracback):
+    auth = api_key
+
+    # "Add the API is there check'
+    if not auth:
+        print(
+            "Your sure the API key is there brotatoe?🫪"
+        )
+        return None
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={auth}"
+    prompt = (
+        "You are a concise Python debugging assistant.\n"
+        "Analyze the following crash tracback, briefly explain what went wrong in 2-3 sentences in a sort of non-complex way"
+        "Also provide a quick code fix/snipper if you can:\n\n"
+        f"{error_tracback}"
+    )
+
+    payload = {"contents": [{"parts": [{"text": prompt}]}]}
+
+    try:
+        response = requests.post(url, json=payload, timeout=10)
+        response.raise_for_status()
+        data= response.json()
+
+        # extract the generated text
+        return data["candidates"][0]["content"]["parts"][0]["text"]
+
+    except Exception as e:
+        print(f"Gemini request failed :-( : {e}")
+        return None
+
+
 def run_ripgrep_search(error_keyword, kb_path):
     rg_result = subprocess.run(
         ["rg", "-i", "-l", error_keyword, str(kb_path)],
@@ -153,8 +195,16 @@ def run_and_troubleshoot(target_script, kb_folder_name):
         matching_files = run_ripgrep_search(error_keyword, kb_path)
         cache.set(error_keyword, matching_files)
 
+
     if not matching_files:
         print(f"{DIM}No matching documentation found in KB.{RESET}")
+
+
+        # The new fallback trigger
+        print(f"\n{CYAN}Consulting Gemini...{RESET}\n")
+        gemini_response = consult_gemini_fallback(result.stderr)
+        if gemini_response:
+            print(draw_ascii_box("Gemini says..", gemini_response, border_color=MAGENTA))
         return
 
     # 4. Render output with SECTION PARSING
