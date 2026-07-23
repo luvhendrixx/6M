@@ -11,3 +11,5 @@
 -> A basic arithmetic calculator (calc.py)
 
 -> A mini search engine inclusive of caching, crawling, indexing, ranking that queries local files, usually markdown files and utilizes them (ily.py)
+
+-> Added a file that checks and protects you from committing your secret .env file as well as check if you accidentally leaked your secrets.e.g API keys and so on (guard.py)
