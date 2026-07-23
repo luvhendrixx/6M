@@ -5,3 +5,10 @@ ussd.json
 errex
 kb_test
 cache.json
+.cache/
+__pycache__/
+.venv/
+logs.txt
+kb_test
+ussd.json
+tasks.json
