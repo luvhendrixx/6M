@@ -10,5 +10,4 @@ __pycache__/
 .venv/
 logs.txt
 kb_test
-ussd.json
 tasks.json
